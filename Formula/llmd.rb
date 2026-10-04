@@ -19,7 +19,10 @@ class Llmd < Formula
       Supported model families: Qwen3.5, Qwen3.6, and Gemma.
       DFlash is supported on Gemma with `--dflash-model=/path/to/dflash-model`
 
-      Point it at a local model repository and serve an OpenAI-compatible API:
+      Load a model directly from the Hugging Face Hub and serve an OpenAI-compatible API:
+        llmd --model=hf://Qwen/Qwen3.6-27B
+
+      Or point it at a local model repository:
         llmd --model=/path/to/model --token-batch-size=512 --max-context-len=2048 --batch-size=1
 
       Then send a request to the OpenAI-compatible endpoint:
