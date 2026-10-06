@@ -16,17 +16,19 @@ class Llmd < Formula
   def caveats
     <<~'EOS'
       llmd runs on the Apple Silicon GPU via Metal.
-      Supported model families: Qwen3.5, Qwen3.6, and Gemma.
-      DFlash is supported on Gemma with `--dflash-model=/path/to/dflash-model`
 
-      Point it at a local model repository and serve an OpenAI-compatible API:
-        llmd --model=/path/to/model --token-batch-size=512 --max-context-len=2048 --batch-size=1
+      Start the server with a local model repository:
+        llmd --model=/path/to/model --model-name=local-model --token-batch-size=512 --max-context-len=2048 --batch-size=1
 
       Then send a request to the OpenAI-compatible endpoint:
         curl http://localhost:8000/v1/chat/completions \
           -H 'Content-Type: application/json' \
-          -d '{"model": "google/gemma-4-12b-it",
+          -d '{"model": "local-model",
                "messages": [{"role": "user", "content": "Hello!"}]}'
+
+      To enable speculative decoding, pass:
+        --speculative-drafter-model=/path/to/drafter-model
+      The drafter must be compatible with the target model.
     EOS
   end
 
