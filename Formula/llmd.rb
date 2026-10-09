@@ -1,9 +1,9 @@
 class Llmd < Formula
   desc "ZML's high-performance, OpenAI-compatible LLM server"
   homepage "https://zml.ai"
-  url "https://mirror.zml.ai/llmd/llmd-macos-20260929.0-arm64.tar.zst"
-  version "20260929.0"
-  sha256 "3f643bfe80d11cb35cbdb745d69cf65ffe3eab794a7b776d71532522dd09e430"
+  url "https://mirror.zml.ai/llmd/llmd/llmd-macos-20261009.0-arm64.tar.zst"
+  version "20261009.0"
+  sha256 "e385da08dce0cfdf6a88761b7cedf68ba5d931d6dc62562db657fe78b264ffd4"
 
   depends_on arch: :arm64
   depends_on macos: :tahoe
