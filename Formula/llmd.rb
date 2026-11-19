@@ -4,6 +4,7 @@ class Llmd < Formula
   url "https://mirror.zml.ai/llmd/llmd/llmd-macos-2026.11.3-arm64.tar.zst"
   version "2026.11.3"
   sha256 "f7d683da4fa0174fd12edfa21191240db4bc0327e5341f78c8a8272808ec94a9"
+  version_scheme 1
 
   depends_on arch: :arm64
   depends_on macos: :tahoe
